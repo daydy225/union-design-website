@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Asap:wght@400;500;700&display=swap");
+
+/*=================*/
+/* Syles Generales */
+/*=================*/
+
+:root {
+  /* Coleurs */
+  --clr-red: hsl(347, 100%, 44%);
+  --clr-light-gray: hsl(222, 5%, 48%);
+  --clr-gray-black: hsl(0, 0%, 20%);
+  --clr-white: hsl(0, 0%, 100%);
+
+  /* Police */
+  --fm: "Asap", sans-serif;
+
+  /* taille de police */
+  --fs-body: 1rem;
+
+  /* taille de font de police */
+  --fw-reg: 400;
+  --fw-med: 500;
+  --fw-bold: 700;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--fm);
+  font-size: var(--fs-body);
+  overflow: hidden;
+}
+
+/*================*/
+/* Header Styles */
+/*===============*/
+
+/* Header 1 */
+
+.header1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1.5rem;
+}
+
+.header__search--input,
+.header1__btn--group {
+  display: none;
+}
+
+.logo {
+  margin-right: auto;
+}
+
+.header1__union--logo {
+  width: 130px;
+}
+
+.header__search--icon i.fa-search {
+  font-size: 1.2em;
+  color: var(--clr-light-gray);
+}
+
+.hearder1__bars--btn {
+  margin-left: 1.5rem;
+  font-size: 1.3em;
+  color: var(--clr-light-gray);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+@media (min-width: 600px) {
+  .header1 {
+    align-items: baseline;
+    width: calc(100% - 8rem);
+    margin: 0.3rem auto;
+    padding: 0;
+  }
+
+  .header1__search--bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 30px;
+    padding: 0.1rem 0.8rem;
+    border: 1px solid var(--clr-light-gray);
+    border-radius: 5px;
+  }
+
+  .header__search--input {
+    display: unset;
+    width: 100%;
+    height: auto;
+    border: 0;
+  }
+
+  .header1__btn--group {
+    display: unset;
+    margin-left: 2rem;
+  }
+
+  .header1__btn1,
+  .header1__btn2 {
+    padding: 0.3rem 1.5rem;
+    font-size: 1em;
+  }
+
+  .header1__btn2 {
+    margin-left: 1rem;
+  }
+
+  .header1__btn2 .fa-unlock-alt {
+    margin-right: 1rem;
+    color: var(--clr-white);
+  }
+
+  .hearder1__bars--btn {
+    display: none;
+  }
+
+  .header1__union--logo {
+    width: 200px;
+  }
+}
