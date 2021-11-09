@@ -7,7 +7,8 @@
 :root {
   /* Coleurs */
   --clr-red: hsl(347, 100%, 44%);
-  --clr-light-gray: hsl(222, 5%, 48%);
+  --clr-light-gray: hsl(225, 5%, 48%);
+  --clr-light: hsl(0, 0%, 70%);
   --clr-gray-black: hsl(0, 0%, 20%);
   --clr-white: hsl(0, 0%, 100%);
 
@@ -27,12 +28,15 @@ body {
   min-height: 100vh;
   font-family: var(--fm);
   font-size: var(--fs-body);
-  overflow: hidden;
 }
 
 /*================*/
 /* Header Styles */
 /*===============*/
+
+.header {
+  border-bottom: 2px solid var(--clr-light);
+}
 
 /* Header 1 */
 
@@ -72,10 +76,10 @@ body {
 
 @media (min-width: 600px) {
   .header1 {
-    align-items: baseline;
-    width: calc(100% - 8rem);
-    margin: 0.3rem auto;
-    padding: 0;
+    align-items: flex-start;
+    width: calc(100% - 15rem);
+    margin: 0rem auto;
+    padding: 0.5rem 0;
   }
 
   .header1__search--bar {
@@ -83,15 +87,21 @@ body {
     justify-content: center;
     align-items: center;
     width: 200px;
-    height: 30px;
+    height: 28px;
+    font-size: 1em;
     padding: 0.1rem 0.8rem;
-    border: 1px solid var(--clr-light-gray);
+    border: 1px solid var(--clr-light);
     border-radius: 5px;
+  }
+
+  .header__search--icon i.fa-search {
+    color: var(--clr-light);
   }
 
   .header__search--input {
     display: unset;
     width: 100%;
+    font-size: 1em;
     height: auto;
     border: 0;
   }
@@ -105,10 +115,20 @@ body {
   .header1__btn2 {
     padding: 0.3rem 1.5rem;
     font-size: 1em;
+    cursor: pointer;
+    text-transform: capitalize;
   }
-
+  .header1__btn1 {
+    background-color: var(--clr-white);
+    border: 2px solid var(--clr-light-gray);
+    border-radius: 5px;
+  }
   .header1__btn2 {
     margin-left: 1rem;
+    background-color: var(--clr-light-gray);
+    border: 2px solid var(--clr-light-gray);
+    color: var(--clr-white);
+    border-radius: 5px;
   }
 
   .header1__btn2 .fa-unlock-alt {
@@ -122,5 +142,167 @@ body {
 
   .header1__union--logo {
     width: 200px;
+  }
+}
+
+/* header 2 */
+
+.header2 {
+  display: none;
+}
+
+@media (min-width: 600px) {
+  .header2 {
+    display: unset;
+  }
+
+  .header2__nav {
+    width: calc(100% - 15rem);
+    margin: 1.5rem auto 1rem;
+  }
+
+  .header2__nav--list {
+    display: flex;
+    align-items: center;
+  }
+
+  .header2__nav--list > *:where(:not(:first-child)) {
+    padding-left: 2rem;
+  }
+
+  .header__list--item {
+    text-transform: capitalize;
+    color: var(--clr-gray-black);
+  }
+  .header__list--item:nth-child(5),
+  .header__list--item:nth-child(6) {
+    color: var(--clr-light-gray);
+  }
+
+  .header__list--item:nth-child(5) {
+    margin-left: auto;
+  }
+
+  .header__list--item .fas {
+    font-size: 0.8rem;
+    margin-right: 0.3rem;
+  }
+}
+
+/*===================*/
+/*Section main page  */
+/*===================*/
+.section_main--page {
+  padding: 2rem;
+}
+
+.main__page--photos > * {
+  margin-bottom: 2rem;
+}
+
+.main__page--img {
+  border-radius: 10px;
+}
+
+@media (min-width: 600px) {
+  .img1 {
+    width: 260px;
+    height: 300px;
+    position: absolute;
+    top: 0;
+    left: 10rem;
+    z-index: 2;
+  }
+
+  .img2 {
+    width: 150px;
+    position: absolute;
+    top: 0;
+    right: 12rem;
+  }
+
+  .img3 {
+    width: 100px;
+    position: absolute;
+    top: 11rem;
+    right: 15rem;
+  }
+
+  .img4 {
+    width: 80px;
+    position: absolute;
+    top: 8rem;
+    left: 4rem;
+  }
+}
+
+.main__page--description {
+  line-height: 1.4;
+}
+
+.main__page--description > *:where(:not(:last-child)) {
+  margin-bottom: 1rem;
+}
+
+.main__page--title {
+  font-size: 2.5rem;
+  color: var(--clr-gray-black);
+}
+
+.main__page--subtitle {
+  font-size: 0.8rem;
+  word-wrap: wrap;
+  color: var(--clr-light-gray);
+}
+
+.main__page--btn {
+  font-size: 0.7em;
+  text-transform: capitalize;
+  padding: 0.3rem 0.8rem;
+  white-space: 1.5rem;
+  background-color: var(--clr-red);
+  color: var(--clr-white);
+  border: 2px solid var(--clr-red);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.main__page--link {
+  display: block;
+  color: var(--clr-red);
+}
+
+@media (min-width: 600px) {
+  .section_main--page {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .main__page--photos {
+    flex-basis: 800px;
+    position: relative;
+  }
+
+  .main__page--description {
+    flex-basis: 300px;
+    padding-right: 1rem;
+    padding-top: 3rem;
+    line-height: 1.4;
+  }
+
+  .main__page--description > *:where(:not(:last-child)) {
+    margin-bottom: 2rem;
+  }
+  .main__page--title {
+    font-size: 3rem;
+  }
+
+  .main__page--subtitle {
+    font-size: 1rem;
+  }
+
+  .main__page--btn {
+    font-size: 1em;
+    padding: 0.3rem 0.8rem;
   }
 }
