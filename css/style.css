@@ -202,6 +202,12 @@ body {
 
 .main__page--img {
   border-radius: 10px;
+  transition: transform 300ms ease-in-out;
+}
+
+.main__page--img:hover {
+  transform: scale(1.025);
+  cursor: pointer;
 }
 
 @media (min-width: 600px) {
